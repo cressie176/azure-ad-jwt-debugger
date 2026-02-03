@@ -1,0 +1,6 @@
+pre-commit:
+  commands:
+    format:
+      glob: "*.{ts,js,json}"
+      run: npx @biomejs/biome check --write --unsafe {staged_files}
+      stage_fixed: true
