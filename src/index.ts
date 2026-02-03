@@ -1,10 +1,18 @@
 import { Hono } from 'hono';
 import { serve } from '@hono/node-server';
+import { cors } from 'hono/cors';
 import { config } from './config.js';
 import debugRoute from './routes/debug.js';
 import type { Variables } from './types.js';
 
 const app = new Hono<{ Variables: Variables }>();
+
+app.use('/*', cors({
+  origin: 'http://localhost:5173',
+  allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+}));
 
 app.route('/api/debug', debugRoute);
 
