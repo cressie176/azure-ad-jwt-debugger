@@ -1,5 +1,5 @@
 import type { Context, Next } from 'hono';
-import { verifyToken } from '../utils/jwt';
+import { verifyToken } from '../utils/jwt.js';
 
 export async function authenticate(c: Context, next: Next) {
   const authHeader = c.req.header('Authorization');

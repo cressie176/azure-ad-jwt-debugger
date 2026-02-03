@@ -20,14 +20,19 @@
   "license": "MIT",
   "author": "Stephen Cresswell",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "bin": {
     "service-active-directory-debugger": "bin/start.js"
   },
+  "files": [
+    "dist",
+    "bin"
+  ],
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "start": "tsx src/index.ts",
     "build": "tsc",
+    "prepare": "tsc",
     "test": "node --test test/**/*.test.ts",
     "lint": "biome check .",
     "format": "biome check --write .",

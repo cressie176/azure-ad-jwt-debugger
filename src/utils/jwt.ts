@@ -1,7 +1,7 @@
 import jwksClient from 'jwks-rsa';
 import jwt from 'jsonwebtoken';
-import { config } from '../config';
-import type { TokenPayload } from '../types';
+import { config } from '../config.js';
+import type { TokenPayload } from '../types.js';
 
 const client = jwksClient({
   jwksUri: `https://login.microsoftonline.com/${config.tenantId}/discovery/v2.0/keys`,

@@ -7,6 +7,13 @@ A minimal REST service for validating MSAL JWT implementations. This service aut
 Run directly from GitHub using npx:
 
 ```bash
+# Create .env.local file with your Azure AD configuration
+touch .env.local
+echo "AZURE_PORTAL_TENANT_ID=your-tenant-id" >> .env.local
+echo "AZURE_PORTAL_CLIENT_ID=your-client-id" >> .env.local
+echo "HTTP_SERVER_PORT=3000" >> .env.local
+
+# Start the service
 npx github:cressie176/azure-ad-jwt-debugger
 ```
 
@@ -23,6 +30,7 @@ echo "AZURE_PORTAL_TENANT_ID=your-tenant-id" >> .env.local
 echo "AZURE_PORTAL_CLIENT_ID=your-client-id" >> .env.local
 echo "HTTP_SERVER_PORT=3000" >> .env.local
 
+# Start the service
 npm start
 ```
 

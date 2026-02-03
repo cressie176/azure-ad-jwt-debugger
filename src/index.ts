@@ -1,9 +1,10 @@
 import { Hono } from 'hono';
 import { serve } from '@hono/node-server';
-import { config } from './config';
-import debugRoute from './routes/debug';
+import { config } from './config.js';
+import debugRoute from './routes/debug.js';
+import type { Variables } from './types.js';
 
-const app = new Hono();
+const app = new Hono<{ Variables: Variables }>();
 
 app.route('/api/debug', debugRoute);
 

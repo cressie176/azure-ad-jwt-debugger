@@ -1,7 +1,8 @@
 import { Hono } from 'hono';
-import { authenticate } from '../middleware/authenticate';
+import { authenticate } from '../middleware/authenticate.js';
+import type { Variables } from '../types.js';
 
-const debug = new Hono();
+const debug = new Hono<{ Variables: Variables }>();
 
 debug.post('/token', authenticate, async (c) => {
   const token = c.get('token');
